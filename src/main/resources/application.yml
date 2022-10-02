@@ -1,0 +1,9 @@
+cloud:
+  aws:
+    credentials:
+      access-key: #access key
+      secret-key: #secret key
+    region:
+      static: us-east-1
+    stack:
+      auto: false
