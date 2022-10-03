@@ -12,7 +12,7 @@ public interface S3Repository {
 
     S3ObjectInputStream getObject(String bucketName, String fileName) throws IOException;
 
-    byte[] downloadFile(String bucketName, String filePath, String fileName) throws IOException;
+    byte[] downloadFile(String bucketName, String fileName) throws IOException;
 
     void moveObject(String bucketName, String fileKey, String destinationFileKey);
 

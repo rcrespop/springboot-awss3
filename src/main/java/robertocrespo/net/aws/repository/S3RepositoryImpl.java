@@ -65,8 +65,8 @@ public class S3RepositoryImpl implements S3Repository{
     }
 
     @Override
-    public byte[] downloadFile(String bucketName,String filePath, String fileName) {
-        S3Object s3Object = s3Client.getObject(bucketName, filePath + fileName);
+    public byte[] downloadFile(String bucketName, String fileName) {
+        S3Object s3Object = s3Client.getObject(bucketName, fileName);
         S3ObjectInputStream inputStream = s3Object.getObjectContent();
         try {
             byte[] content = IOUtils.toByteArray(inputStream);

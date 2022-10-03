@@ -1,6 +1,6 @@
 package robertocrespo.net.aws.controller;
 
-import  robertocrespo.net.aws.model.Asset;
+import robertocrespo.net.aws.model.Asset;
 import robertocrespo.net.aws.service.AwsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
@@ -49,7 +49,7 @@ public class AwsController {
     @GetMapping("/downloadS3File")
     public ResponseEntity<ByteArrayResource> downloadS3File(@RequestParam(value = "bucketName") String bucketName, @RequestParam(value = "filePath") String filePath, @RequestParam(value = "fileName") String fileName)
             throws IOException {
-        byte[] data = awsService.downloadFile(bucketName,filePath, fileName);
+        byte[] data = awsService.downloadFile(bucketName, fileName);
         ByteArrayResource resource = new ByteArrayResource(data);
         return ResponseEntity
                 .ok()
