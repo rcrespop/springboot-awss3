@@ -1,0 +1,204 @@
+{
+	"info": {
+		"_postman_id": "31dfdf67-7a9f-4d66-ac80-a7cb7b1b5ef6",
+		"name": "SpringBoot+S3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "738234"
+	},
+	"item": [
+		{
+			"name": "listS3Files",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/s3/listS3Files?bucketName=mybucket-rcp",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"s3",
+						"listS3Files"
+					],
+					"query": [
+						{
+							"key": "bucketName",
+							"value": "mybucket-rcp"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getS3FileContent",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/s3/getS3FileContent?bucketName=mybucket-rcp&fileName=folder1/1664531787168_Hola mundo.txt",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"s3",
+						"getS3FileContent"
+					],
+					"query": [
+						{
+							"key": "bucketName",
+							"value": "mybucket-rcp"
+						},
+						{
+							"key": "fileName",
+							"value": "folder1/1664531787168_Hola mundo.txt"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "downloadS3File",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/s3/downloadS3File?bucketName=mybucket-rcp&fileName=1664531787168_Hola mundo.txt",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"s3",
+						"downloadS3File"
+					],
+					"query": [
+						{
+							"key": "bucketName",
+							"value": "mybucket-rcp"
+						},
+						{
+							"key": "fileName",
+							"value": "1664531787168_Hola mundo.txt"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "uploadFile",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/paola.vargas/Downloads/VASC2322H (7).xml"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/s3/uploadFile?bucketName=myawsbucket21458&filePath=folder1/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"s3",
+						"uploadFile"
+					],
+					"query": [
+						{
+							"key": "bucketName",
+							"value": "myawsbucket21458"
+						},
+						{
+							"key": "filePath",
+							"value": "folder1/"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "moveFile",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/s3/moveFile?bucketName=myawsbucket21458&fileName=VASC2322H.xml&fileNameDest=folder/VASC2322H.xml",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"s3",
+						"moveFile"
+					],
+					"query": [
+						{
+							"key": "bucketName",
+							"value": "myawsbucket21458"
+						},
+						{
+							"key": "fileName",
+							"value": "VASC2322H.xml"
+						},
+						{
+							"key": "fileNameDest",
+							"value": "folder/VASC2322H.xml"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteObject",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/s3/deleteObject?bucketName=mybucket-rcp&fileName=folder1/1664530389195_above-adventure-aerial-air-1024x697.jpg&=",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"s3",
+						"deleteObject"
+					],
+					"query": [
+						{
+							"key": "bucketName",
+							"value": "mybucket-rcp"
+						},
+						{
+							"key": "fileName",
+							"value": "folder1/1664530389195_above-adventure-aerial-air-1024x697.jpg"
+						},
+						{
+							"key": "",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
